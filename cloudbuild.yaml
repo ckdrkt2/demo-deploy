@@ -8,5 +8,3 @@ steps:
     env:
       - "CLOUDSDK_COMPUTE_REGION=us-west2"
       - "CLOUDSDK_CONTAINER_CLUSTER=tf-cluster"
-options:
-  logging: CLOUD_LOGGING_ONLY
