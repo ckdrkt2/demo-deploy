@@ -31,4 +31,25 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
-  type: LoadBalancer
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "34.160.52.13"
+    networking.gke.io/managed-certificates: "qkqhro"
+    kubernetes.io/ingress.class: "gce"
+spec:
+  rules:
+    - host: "qkqhro.com"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: demo-deploy
+                port:
+                  number: 80
