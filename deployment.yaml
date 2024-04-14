@@ -33,6 +33,14 @@ spec:
     targetPort: 8080
   type: ClusterIP
 ---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: qkqhro
+spec:
+  domains:
+    - qkqhro.com
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
