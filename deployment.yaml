@@ -38,7 +38,7 @@ kind: Ingress
 metadata:
   name: my-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "34.160.52.13"
+    kubernetes.io/ingress.global-static-ip-name: "qkqhro"
     networking.gke.io/managed-certificates: "qkqhro"
     kubernetes.io/ingress.class: "gce"
 spec:
