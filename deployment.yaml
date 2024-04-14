@@ -48,7 +48,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "qkqhro"
     networking.gke.io/managed-certificates: "qkqhro"
-    kubernetes.io/ingress.class: "gce"
 spec:
   rules:
     - host: "qkqhro.com"
