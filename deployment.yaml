@@ -31,7 +31,7 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
-  type: ClusterIP
+  type: NodePort
 # ---
 # apiVersion: networking.gke.io/v1
 # kind: ManagedCertificate
@@ -48,15 +48,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "qkqhro"
     networking.gke.io/managed-certificates: "qkqhro"
+    ingressClassName: "gce"
 spec:
-  rules:
-    - host: "qkqhro.com"
-      http:
-        paths:
-          - path: /*
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: demo-deploy
-                port:
-                  number: 80
+  defaultBackend:
+    service:
+      name: demo-deploy
+      port:
+        number: 80
