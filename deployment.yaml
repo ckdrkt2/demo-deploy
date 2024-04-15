@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: demo-deploy
-        image: us-west2-docker.pkg.dev/dazzling-byway-418414/demo/develop:5516533a6b85ef1d510ac77c37fc3cfdc7717d84
+        image: us-west2-docker.pkg.dev/dazzling-byway-418414/demo/develop:852697f384df18e2c3d7caf3085140811b7c069f
         ports:
         - containerPort: 8080
 ---
