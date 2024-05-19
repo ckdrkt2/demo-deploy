@@ -6,11 +6,29 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: "qkqhro"
     networking.gke.io/managed-certificates: "qkqhro"
 spec:
-  defaultBackend:
-    service:
-      name: demo-deploy
-      port:
-        number: 80
+  rules:
+    - host: qkqhro.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: demo-deploy
+                namespace: default
+                port:
+                  number: 8080
+    - host: abc.qkqhro.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: nginx-1-service
+                namespace: nginx
+                port:
+                  number: 80
 ---
 # apiVersion: networking.gke.io/v1
 # kind: ManagedCertificate
